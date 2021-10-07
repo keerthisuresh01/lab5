@@ -19,13 +19,14 @@ http.createServer(function(req,res){
     })
     var path=url.parse(req.url).pathname;
     var query=url.parse(req.url).query;
-    res.write("<div class='container'><h3>My Info:</h3>");
+    res.write("< class='container'><h3>My Info:</h3>");
     res.write("<h5 class='pl-5'>Author: Keerthi S</h5>");
     res.write("<h5 class='pl-5'>Roll no: 19ITR041</h5>");
     res.write("<h3>Server Information:</h3>");
     res.write("<h5 class='pl-5'>URL: "+req.url+"</h5>");
     res.write("<h5 class='pl-5'>Query: "+query+"</h5>");
-    res.write("<h5 class='pl-5'>Pathname: "+path+"</h5></div>");
+    res.write("<h5 class='pl-5'>Pathname: "+path+"</h5>");
+    res.write("<h5 class='pl-5'>Heroku port: "+PORT+"</h5></div>");
            
 }).listen(PORT,()=>{
     console.log(PORT);
