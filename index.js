@@ -3,7 +3,7 @@ var url=require('url');
 var fs=require('fs');
 var querystring=require('querystring');
 
-const port=process.env.port || 3000;
+const port=process.env.PORT || 3000;
 http.createServer(function(req,res){
     res.writeHead(200,{'Content-type':'text/html'});
     fs.readFile('./index.html',null,function(err,data){
@@ -27,6 +27,8 @@ http.createServer(function(req,res){
     res.write("<h5 class='pl-5'>Query: "+query+"</h5>");
     res.write("<h5 class='pl-5'>Pathname: "+path+"</h5></div>");
             
-}).listen(port);
+}).listen(port,()=>{
+    console.log(port);
+});
     
-console.log(port);
+
